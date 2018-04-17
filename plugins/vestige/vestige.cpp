@@ -35,7 +35,7 @@
 #include <QDomElement>
 
 #include "ConfigManager.h"
-#include "BufferManager.h"
+#include "BufferPool.h"
 #include "ConfigManager.h"
 #include "Engine.h"
 #include "gui_templates.h"
@@ -366,7 +366,7 @@ void vestigeInstrument::play( sampleFrame * _buf )
 
 	if( m_plugin == NULL )
 	{
-		BufferManager::clear( _buf, frames );
+		BufferPool::clear( _buf, frames );
 
 		m_pluginMutex.unlock();
 		return;
